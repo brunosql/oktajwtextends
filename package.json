@@ -1,0 +1,14 @@
+{
+  "name": "iamx-token-customize",
+  "version": "1.0.0",
+  "description": "okta inline hook POC",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bruno Lima",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
