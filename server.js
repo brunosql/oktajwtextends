@@ -1,8 +1,16 @@
 var express = require("express");
 var app = express();
 
-var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
-var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
+console.log("started");
+
+// setup ports
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+
+app.get('/', (req, res) => {
+
+    return res.status(200).send("Hello!");
+});
 
 app.post('/iamx-token', (req, res) => {
 
@@ -34,8 +42,8 @@ app.post('/iamx-token', (req, res) => {
     return res.status(200).send(message);
   });
 
-app.listen(server_port, server_ip_address, () => {
-    console.log( "Listening on " + server_ip_address + ", port " + server_port )
+// server listens in on port
+app.listen(server_port, server_ip_address, function () {
+    console.log( "Listening on " + server_ip_address + ", server_port " + server_port );
 });
 
-module.exports = app;
